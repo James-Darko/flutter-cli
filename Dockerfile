@@ -6,5 +6,6 @@ RUN mv flutter /opt/flutter
 ENV PATH="/opt/flutter/bin:${PATH}"
 RUN flutter config --enable-web
 RUN flutter build web > /dev/null 2>&1 || true
+WORKDIR /project
 ENTRYPOINT ["flutter"]
 CMD ["--version"]
